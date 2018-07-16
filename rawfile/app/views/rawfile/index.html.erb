@@ -1,0 +1,238 @@
+<% content_for :header_tags do %>
+<%= javascript_include_tag 'defaultSettings.js', :plugin => 'rawfile'%>
+<%= javascript_include_tag 'testCaseUpdateIssue.js', :plugin => 'rawfile'%>
+<%= javascript_include_tag 'anotherIssue.js', :plugin => 'rawfile'%>
+<%= javascript_include_tag 'js/jquery-3.1.1.min.js', :plugin => 'rawfile'%>
+<%= javascript_include_tag 'js/jquery-ui-1.12.1.min.js', :plugin => 'rawfile'%>
+
+<%= javascript_include_tag 'js/tether.min.js', :plugin => 'rawfile'%>
+<%= javascript_include_tag 'js/bootstrap.min.js', :plugin => 'rawfile'%>
+<%= javascript_include_tag 'js/pouchdb-6.1.0.min.js', :plugin => 'rawfile'%>
+<%= javascript_include_tag 'js/pouchdb.find.js', :plugin => 'rawfile' %>
+<%= javascript_include_tag 'js/pouchdb.relational-pouch.js', :plugin => 'rawfile'%>
+
+<%= javascript_include_tag 'js/pouchdb.delta-pouch.js', :plugin => 'rawfile'%>
+
+<%= javascript_include_tag 'js/showdown.min.js', :plugin => 'rawfile'%>
+<%= javascript_include_tag 'js/bootstrap-notify.min.js', :plugin => 'rawfile'%>
+<%= javascript_include_tag 'js/bootstrap-select.js', :plugin => 'rawfile'%>
+
+ <%= stylesheet_link_tag "css/font-awesome.min.css" , :plugin => 'rawfile'%>
+    <%= stylesheet_link_tag "css/bootstrap-reboot.css" , :plugin => 'rawfile'%>
+    <%= stylesheet_link_tag "css/bootstrap-grid.min.css"  , :plugin => 'rawfile'%>
+    <%= stylesheet_link_tag "css/bootstrap.css" , :plugin => 'rawfile' %>
+    <%= stylesheet_link_tag "css/styles.css"  , :plugin => 'rawfile'%>
+    <%= stylesheet_link_tag "css/animate.min.css" , :plugin => 'rawfile'%>
+    <%= stylesheet_link_tag "css/vertical-menu.css" , :plugin => 'rawfile'%>
+    <%= stylesheet_link_tag "css/dropzone.css" , :plugin => 'rawfile'%>
+    <%= stylesheet_link_tag "css/bootstrap-select.css" , :plugin => 'rawfile'%>
+    <%= stylesheet_link_tag "slick/slick-theme.css" , :plugin => 'rawfile'%>
+    <%= stylesheet_link_tag "jquery.dataTables.min.css" , :plugin => 'rawfile'%>
+
+<% end %>
+
+
+
+
+<div id="body1"> 
+
+<!--
+<div class="alert alert-info w-100 mw-100 text-center js-local-db-badge">The local database is used. Synchronize with server
+Off!
+</div>
+-->
+
+<div class="navbar-content m-auto">
+    <nav class="navbar navbar-light navbar-toggleable-md mb-3 p-0">
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <h1 class="navbar-brand mb-0">Test Case Generator</h1>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="w-100">
+                <ul class="nav nav-pills mt-1 float-lg-left">
+          <li class="nav-item" hidden>
+                        <a class="nav-link js-nav-link" id="vvvvv" href="#Specification" >Specification</a>
+                    </li>
+          <li class="nav-item" hidden>
+                        <a class="nav-link js-nav-link" href="#TestPlan">Test Plan</a>
+                    </li>
+          <li class="nav-item" >
+                        <a class="nav-link active js-nav-link" href="#AppMatrix">Application Matrix</a>
+                    </li>
+                    <li class="nav-item" hidden>
+                        <a class="nav-link  js-nav-link" href="#TestCase">Test Case Template</a>
+                    </li>
+          <li class="nav-item" >
+                        <a class="nav-link  js-nav-link" href="#TestCaseExe">Test Case Execution</a>
+                    </li>
+                    <li class="nav-item" hidden>
+                        <a class="nav-link js-nav-link" href="#Group">Group</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link js-nav-link" href="#Testing">Testing</a>
+                    </li>
+          <li class="nav-item" hidden>
+                        <a class="nav-link js-nav-link" href="#TestSetup">Test Setup</a>
+                    </li>
+                </ul>
+        
+                <div id="DatabaseButtons" class="btn-group mt-1 float-lg-right" role="group">
+                   
+                    <button type="button" class="btn btn-info js-sumup-button">
+                        <i class="fa fa-external-link-square"></i>
+                        Go to Sump Up
+                    </button>
+
+                    <button type="button" class="btn btn-info js-issues-button">
+                        <i class="fa fa-external-link-square"></i>
+                        Generate Issues
+                    </button>
+                   
+                    <!--
+                    <button type="button" class="btn btn-outline-warning js-settings-button">
+                        <i class="fa fa-edit"></i>
+                        Customize
+                    </button>
+                    -->
+                    
+                    <button type="button" class="btn btn-outline-warning js-change-db-button">
+                        <i class="fa fa-database"></i>
+                        Change Database <i class="badge badge-warning badge-pill js-current-db js-current-db"></i>
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<article class="m-auto js-page-container" data-page-code="TestCase" style="display: none;">
+    <!--VERTICAL MENU START-->
+    <div class="btn btn-outline-primary vertical-text toggle-vertical-menu-btn js-hide-vertical-menu collapse offset-xl-3 offset-lg-4 offset-md-5"
+         data-menu-id="itemsVerticalListMenu">&uarr; Hide List &uarr;
+    </div>
+    <div class="btn btn-outline-primary vertical-text toggle-vertical-menu-btn js-show-vertical-menu hidden-xl-up"
+         data-menu-id="itemsVerticalListMenu">&darr; Show list &darr;
+    </div>
+
+    <div class="row">
+        <div id="itemsVerticalListMenu" class="col-xl-3 col-lg-4 col-md-5 vertical-menu">
+            <div id="itemsVerticalListContainer"></div>
+        </div>
+        <!--VERTICAL MENU END-->
+
+        <div id="PageContent" class="col-lg-12 col-xl-9">
+            <div class="mb-3 js-manage-item-buttons" role="toolbar">
+                <div class="btn-group mr-2" role="group">
+                    <button type="button" class="btn btn-outline-primary js-save-button">
+                        <i class="fa fa-database"></i>
+                        <span>Save</span>
+                    </button>
+                    <!--
+                    <button type="button" class="btn btn-outline-danger js-remove-button collapse">
+                        <i class="fa fa-remove"></i>
+                        <span>Delete</span>
+                    </button>
+                    -->
+                </div>
+                <div class="btn-group float-right" role="group">
+                    <!--
+                    <button type="button" class="btn btn-outline-info js-create-button">
+                        <i class="fa fa-plus"></i>
+                        <span>Create</span>
+                    </button>
+                    -->
+                </div>
+            </div>
+            <div id="content_js"></div>
+
+            <hr class="mb-4">
+            <div class="mb-5 btn-toolbar">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-info js-download-file" data-file-type="DOC">
+                        <i class="fa fa-download"></i>
+                        Download .doc
+                    </button>
+                    <button type="button" class="btn btn-outline-info js-download-file" data-file-type="XLS">
+                        <i class="fa fa-download"></i>
+                        Download .xls
+                    </button>
+                </div>
+        
+            </div>
+            <table class="text-left mb-5" border="1" cellspacing="5" width="100%">
+                <tbody id="resultTable"></tbody>
+            </table>
+        </div>
+    </div>
+</article>
+
+</div> 
+
+
+
+
+<script type="text/javascript">
+    window.ru = {belyiz: {utils: {}}};
+    window.nodes = {body: $('body')};
+</script>
+
+<%= javascript_include_tag 'blob-util.js' , :plugin => 'rawfile' %>
+<%= javascript_include_tag 'js/ru/belyiz/utils/Package.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/Service.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/Widget.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/Page.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/utils/InputsUtils.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/utils/HtmlGenerator.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/utils/TableToFileConverter.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/utils/TextUtils.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/utils/ArraysUtils.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/ReDrawableWidget.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/AbstractEntityInfoWidget.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/SettingsModal.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestCaseInfo.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestCaseExeInfo.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestingSteps.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestCaseResultTable.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestingResultTable.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/ItemsList.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/VerticalMenu.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/Modal.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/GroupInfo.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/ItemsListModal.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestCaseGroups.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/SpecificationInfo.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/AppMatrixInfo.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestSetupInfo.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestPlanInfo.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/AbstractEntityService.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/Notification.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/Confirmation.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/DatabaseService.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/TestCasesService.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/TestCasesExeService.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/TestSetupService.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/TestPlanService.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/GroupsService.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/UndoService.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/SpecificationService.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/AppMatrixService.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/IssuesService.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/AbstractEntityInfoPage.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/AppMatrix.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/Specification.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/TestCase.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/TestCaseExe.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/Group.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/Testing.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/TestSetup.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/TestPlan.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'dropzone-amd-module.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'js/ru/belyiz/Main.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'slick/slick.min.js', :plugin => 'rawfile'  %>
+<%= javascript_include_tag 'slick/slickConfig.js', :plugin => 'rawfile' 
+%>
+<%= javascript_include_tag 'jquery.dataTables.min.js', :plugin => 'rawfile' %>

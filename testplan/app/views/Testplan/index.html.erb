@@ -1,0 +1,100 @@
+<% content_for :header_tags do %>
+<%= javascript_include_tag 'defaultSettings.js', :plugin => 'testplan'%>
+<%= javascript_include_tag 'testCaseUpdateIssue.js', :plugin => 'testplan'%>
+<%= javascript_include_tag 'anotherIssue.js', :plugin => 'testplan'%>
+<%= javascript_include_tag 'js/jquery-3.1.1.min.js', :plugin => 'testplan'%>
+<%= javascript_include_tag 'js/jquery-ui-1.12.1.min.js', :plugin => 'testplan'%>
+
+<%= javascript_include_tag 'js/tether.min.js', :plugin => 'testplan'%>
+<%= javascript_include_tag 'js/bootstrap.min.js', :plugin => 'testplan'%>
+<%= javascript_include_tag 'js/pouchdb-6.1.0.min.js', :plugin => 'testplan'%>
+<%= javascript_include_tag 'js/pouchdb.find.js', :plugin => 'testplan' %>
+<%= javascript_include_tag 'js/pouchdb.relational-pouch.js', :plugin => 'testplan'%>
+<%= javascript_include_tag 'js/showdown.min.js', :plugin => 'testplan'%>
+<%= javascript_include_tag 'js/bootstrap-notify.min.js', :plugin => 'testplan'%>
+<%= javascript_include_tag 'js/bootstrap-select.js', :plugin => 'testplan'%>
+
+ <%= stylesheet_link_tag "css/font-awesome.min.css" , :plugin => 'testplan'%>
+    <%= stylesheet_link_tag "css/bootstrap-reboot.css" , :plugin => 'testplan'%>
+    <%= stylesheet_link_tag "css/bootstrap-grid.min.css"  , :plugin => 'testplan'%>
+    <%= stylesheet_link_tag "css/bootstrap.css" , :plugin => 'testplan' %>
+    <%= stylesheet_link_tag "css/styles.css"  , :plugin => 'testplan'%>
+    <%= stylesheet_link_tag "css/animate.min.css" , :plugin => 'testplan'%>
+    <%= stylesheet_link_tag "css/vertical-menu.css" , :plugin => 'testplan'%>
+    <%= stylesheet_link_tag "css/dropzone.css" , :plugin => 'testplan'%>
+    <%= stylesheet_link_tag "css/bootstrap-select.css" , :plugin => 'testplan'%>
+    <%= stylesheet_link_tag "slick/slick-theme.css" , :plugin => 'testplan'%>
+    <%= stylesheet_link_tag "jquery.dataTables.min.css" , :plugin => 'testplan'%>
+
+<% end %>
+
+<br/>
+<br/>
+
+<div id="table_index">
+	
+ 
+</div>
+<br/>
+
+
+<script type="text/javascript">
+    window.ru = {belyiz: {utils: {}}};
+    window.nodes = {body: $('body')};
+</script>
+
+<%= javascript_include_tag 'blob-util.js' , :plugin => 'testplan' %>
+<%= javascript_include_tag 'js/ru/belyiz/utils/Package.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/Service.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/Widget.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/Page.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/utils/InputsUtils.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/utils/HtmlGenerator.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/utils/TableToFileConverter.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/utils/TextUtils.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/utils/ArraysUtils.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/ReDrawableWidget.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/AbstractEntityInfoWidget.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/SettingsModal.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestCaseInfo.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestCaseExeInfo.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestingSteps.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestCaseResultTable.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestingResultTable.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/ItemsList.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/VerticalMenu.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/Modal.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/GroupInfo.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/ItemsListModal.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestCaseGroups.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/SpecificationInfo.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/AppMatrixInfo.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestSetupInfo.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/widgets/TestPlanInfo.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/AbstractEntityService.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/Notification.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/Confirmation.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/DatabaseService.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/TestCasesService.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/TestCasesExeService.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/TestSetupService.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/TestPlanService.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/GroupsService.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/UndoService.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/SpecificationService.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/AppMatrixService.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/services/IssuesService.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/patterns/AbstractEntityInfoPage.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/AppMatrix.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/Specification.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/TestCase.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/TestCaseExe.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/Group.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/Testing.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/TestSetup.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/pages/TestPlan.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'dropzone-amd-module.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'js/ru/belyiz/Main.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'slick/slick.min.js', :plugin => 'testplan'  %>
+<%= javascript_include_tag 'slick/slickConfig.js', :plugin => 'testplan' %>
+<%= javascript_include_tag 'jquery.dataTables.min.js', :plugin => 'testplan' %>
